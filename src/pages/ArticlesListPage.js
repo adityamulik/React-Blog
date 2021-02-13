@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { articles } from './article-content';
 
 const ArticlesListPage = () => (
-  <div>
+  <React.Fragment>
     <h1>This is the articles list page</h1>
     {articles.map(article => (
       <Link to={`/articles/${article.name}`} className="article-list" key={article.name}>
@@ -11,8 +11,7 @@ const ArticlesListPage = () => (
         <p>{article.content[0].substring(0, 150)}....</p>
       </Link>
     ))}
-
-  </div>
+  </React.Fragment>
 )
 
 export default ArticlesListPage;
